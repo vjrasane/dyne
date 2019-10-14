@@ -1,0 +1,37 @@
+{
+  "name": "dyne",
+  "version": "1.0.0",
+  "main": "build/bundle.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "build:dev": "cross-env NODE_ENV=development rollup -c",
+    "build:watch": "nodemon --exec npm run build:dev --watch src"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.6.0",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-root-import": "^6.4.1",
+    "babel-plugin-transform-jsx": "^2.0.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "cross-env": "^6.0.0",
+    "nodemon": "^1.19.2",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-uglify": "^6.0.3"
+  },
+  "optionalDependencies": {
+    "eslint": "5.5.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^10.0.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-promise": "^4.2.1",
+    "prettier-eslint": "^9.0.0"
+  }
+}
