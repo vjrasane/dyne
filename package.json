@@ -2,7 +2,7 @@
   "name": "dyne",
   "version": "1.0.0",
   "main": "build/bundle.js",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c",
     "build:dev": "cross-env NODE_ENV=development rollup -c",
