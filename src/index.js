@@ -1,6 +1,6 @@
 import { isFunction, flatten, isString } from "~/utils";
 
-class DyneElement {
+export class DyneElement {
   constructor(type, props, children) {
     this.type = type;
     this.props = props || [];
