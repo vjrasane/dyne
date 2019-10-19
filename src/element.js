@@ -6,4 +6,4 @@ export default class DyneElement {
   }
 }
 
-// DyneElement.empty = new DyneElement();
+DyneElement.empty = new DyneElement();

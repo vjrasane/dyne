@@ -1,4 +1,4 @@
-import { exists } from "../utils";
+import { exists } from "../../utils";
 import Effect from "../effects/effect";
 
 export type Dispatch = (msg: object) => void;

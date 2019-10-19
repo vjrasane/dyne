@@ -1,4 +1,4 @@
-import { isFunction, throwError } from "../utils";
+import { isFunction, throwError } from "../../utils";
 import Return from "../effects/return";
 import Effect from "../effects/effect";
 import process from "./process";

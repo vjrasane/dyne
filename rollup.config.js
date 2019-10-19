@@ -32,8 +32,7 @@ const bundle = ([input, output]) => ({
     format: "cjs",
     exports: "named"
   },
-  plugins,
-  external: ["@babel/runtime"]
+  plugins
 });
 
 export default [

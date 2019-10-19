@@ -1,6 +1,6 @@
 import process from "../core/process";
 import { Updated } from "./update";
-import { isFunction, exists, always } from "../utils";
+import { isFunction, exists, always } from "../../utils";
 
 export type Init<M> = (flags: object) => Updated<M>;
 

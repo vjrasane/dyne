@@ -1,4 +1,4 @@
-import { isFunction, Generator, Sink } from "../utils";
+import { isFunction, Generator, Sink } from "../../utils";
 import Effect from "./effect";
 import { Dispatch } from "../core/dispatch";
 

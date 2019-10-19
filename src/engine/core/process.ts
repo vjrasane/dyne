@@ -1,5 +1,5 @@
 import freeze from "deep-freeze";
-import { exists } from "../utils";
+import { exists } from "../../utils";
 import Return from "../effects/return";
 import { Updated, Update } from "./update";
 import { dispatch } from "../core/dispatch";

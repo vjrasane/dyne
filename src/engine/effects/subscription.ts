@@ -1,5 +1,5 @@
 import Effect from "./effect";
-import { Generator, Sink } from "../utils";
+import { Generator, Sink } from "../../utils";
 import { Cmd, Command, msgEventListener } from "./command";
 import { Dispatch } from "../core/dispatch";
 

@@ -1,4 +1,4 @@
-import { isFunction, exists } from "../utils";
+import { isFunction, exists } from "../../utils";
 import { msgEventListener } from "../effects/command";
 import DyneElement from "../../element";
 import { dispatch } from "../core/dispatch";
@@ -126,7 +126,7 @@ const updateElement = (
     $parent.replaceChild(createElement(newNode), $parent.childNodes[index]);
   } else if (newNode instanceof DyneElement) {
     const oldElem =
-      oldNode instanceof DyneElement ? oldNode : new DyneElement();
+      oldNode instanceof DyneElement ? oldNode : DyneElement.empty;
     updateProps(
       <HTMLElement>$parent.childNodes[index],
       newNode.props,

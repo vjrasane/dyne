@@ -3,7 +3,7 @@ import { getInitializer, Initializer, Init } from "../core/init";
 import { getUpdater, Updater, Update } from "../core/update";
 import { getViewer, View, Viewer } from "../core/view";
 import { dispatch, queues } from "../core/dispatch";
-import { Sink } from "../utils";
+import { Sink } from "../../utils";
 
 const UPDATE_INTERVAL = 1; /* milliseconds */
 const VIEW_INTERVAL = 10; /* milliseconds */

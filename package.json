@@ -10,7 +10,6 @@
     "format:pkg": "format-package -w"
   },
   "dependencies": {
-    "@babel/runtime": "^7.6.3",
     "deep-freeze": "^0.0.1"
   },
   "devDependencies": {
