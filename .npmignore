@@ -2,4 +2,5 @@
 /*
 
 # except
-!build
+!engine.js
+!index.js
