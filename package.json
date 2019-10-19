@@ -8,7 +8,7 @@
     "build:dev": "cross-env NODE_ENV=development rollup -c",
     "build:watch": "nodemon --exec npm run build:dev --watch src",
     "format:pkg": "format-package -w",
-    "preversion": "copyfiles ./build/* ./"
+    "prepublish": "node ./scripts/prepublish.js"
   },
   "dependencies": {
     "deep-freeze": "^0.0.1"
@@ -25,7 +25,6 @@
     "babel-plugin-root-import": "6.4.1",
     "babel-plugin-transform-jsx": "2.0.0",
     "babel-preset-es2015-rollup": "3.0.0",
-    "copyfiles": "^2.1.1",
     "cross-env": "6.0.0",
     "eslint": "5.5.0",
     "eslint-config-prettier": "^6.3.0",
@@ -35,6 +34,7 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-promise": "^4.2.1",
     "format-package": "^5.2.0",
+    "gently-copy": "^3.2.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
     "nodemon": "1.19.2",
