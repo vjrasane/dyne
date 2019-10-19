@@ -1,13 +1,14 @@
 import freeze from "deep-freeze";
 import { isFunction, always } from "../utils";
-import { isElement, DyneElement } from "../../element";
+import { VirtualDom } from "../render";
+import DyneElement from "../../element";
 
-export type View<M> = (model: M) => DyneElement | DyneElement[];
+export type View<M> = (model: M) => VirtualDom;
 
 export type Viewer<M> = View<M>;
 
 export const getViewer = <M>(view: View<M>): Viewer<M> => {
-  if (isElement(view)) {
+  if (view instanceof DyneElement) {
     return always(freeze(view));
   } else if (isFunction(view)) {
     return model => freeze(view(model));

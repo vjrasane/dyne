@@ -1,4 +1,4 @@
-export { default as engine } from "~/core";
-export { Cmd } from "~/effects/command";
-export { Sub } from "~/effects/subscription";
-export { Update, Update as Init } from "~/core/update";
+export { default as engine } from "~/engine/core";
+export { Cmd } from "~/engine/effects/command";
+export { Sub } from "~/engine/effects/subscription";
+export { Update, Update as Init } from "~/engine/core/update";

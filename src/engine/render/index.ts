@@ -1,6 +1,6 @@
 import { isFunction, exists } from "../utils";
 import { msgEventListener } from "../effects/command";
-import { isElement, DyneElement } from "../../element";
+import DyneElement from "../../element";
 import { dispatch } from "../core/dispatch";
 
 const isEventProp = (name: string): boolean => /^on/.test(name);
@@ -108,7 +108,7 @@ const createElement = (node: DyneElement | string) => {
   return document.createTextNode(node);
 };
 
-type DomElement = string | DyneElement;
+export type DomElement = string | DyneElement;
 
 export type VirtualDom = DomElement | DomElement[];
 
@@ -126,7 +126,7 @@ const updateElement = (
     $parent.replaceChild(createElement(newNode), $parent.childNodes[index]);
   } else if (newNode instanceof DyneElement) {
     const oldElem =
-      oldNode instanceof DyneElement ? oldNode : DyneElement.empty;
+      oldNode instanceof DyneElement ? oldNode : new DyneElement();
     updateProps(
       <HTMLElement>$parent.childNodes[index],
       newNode.props,

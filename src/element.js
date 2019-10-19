@@ -1,4 +1,4 @@
-export class DyneElement {
+export default class DyneElement {
   constructor(type, props, children) {
     this.type = type;
     this.props = props || [];
@@ -6,6 +6,4 @@ export class DyneElement {
   }
 }
 
-DyneElement.empty = new DyneElement();
-
-export const isElement = obj => obj instanceof DyneElement;
+// DyneElement.empty = new DyneElement();

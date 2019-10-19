@@ -1,5 +1,5 @@
 import { isFunction, flatten, isString } from "~/utils";
-import { DyneElement, isElement } from "~/element";
+import DyneElement from "~/element";
 
 const dyne = () => {
   // inner scope here
@@ -21,7 +21,7 @@ const dyne = () => {
        * Static JSX components are passed as already created elements.
        * Any props or children are ignored.
        */
-      if (isElement(type)) {
+      if (type instanceof DyneElement) {
         return type;
       }
 
