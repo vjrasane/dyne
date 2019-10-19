@@ -32,7 +32,8 @@ const bundle = ([input, output]) => ({
     format: "cjs",
     exports: "named"
   },
-  plugins
+  plugins,
+  external: ["dyne-internals"]
 });
 
 export default [

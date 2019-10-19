@@ -1,6 +1,6 @@
 {
   "name": "dyne",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "license": "Apache-2.0",
   "main": "index.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "@babel/runtime": "^7.6.3",
     "babel-preset-react-app": "^9.0.2",
     "deep-freeze": "^0.0.1",
-    "dyne-internals": "^0.0.2"
+    "dyne-internals": "^0.0.5"
   },
   "devDependencies": {
     "@babel/cli": "7.6.0",
@@ -32,7 +32,6 @@
     "babel-plugin-root-import": "6.4.1",
     "babel-plugin-transform-jsx": "2.0.0",
     "babel-preset-dyne": "^0.0.2",
-    "babel-preset-es2015-rollup": "3.0.0",
     "cross-env": "6.0.0",
     "eslint": "5.5.0",
     "eslint-config-dyne": "^0.0.1",
