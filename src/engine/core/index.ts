@@ -13,7 +13,7 @@ const intervals = {
   effect: EFFECT_INTERVAL
 };
 
-const loop = (procedure: Sink, interval: number): void => {
+const syncLoop = (procedure: Sink, interval: number): void => {
   let lock = false;
   setInterval((): void => {
     if (!lock) {
@@ -29,7 +29,7 @@ export default <F, M>(setupObj: Setup<F, M>) => {
   return (opts: Opts<F>): void => {
     const procedures = engine(opts);
     Object.entries(procedures).forEach(([name, procedure]) =>
-      loop(procedure, intervals[name])
+      syncLoop(procedure, intervals[name])
     );
   };
 };

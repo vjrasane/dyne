@@ -1,7 +1,7 @@
+import DyneElement from "dyne-internals";
 import freeze from "deep-freeze";
 import { isFunction, always } from "../../utils";
 import { VirtualDom } from "../render";
-import DyneElement from "../../element";
 
 export type View<M> = (model: M) => VirtualDom;
 

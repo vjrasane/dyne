@@ -29,22 +29,6 @@ Update.wrap = <A>(wrappable: Updated<A>): Return<A> => {
   }
 };
 
-Update.compose = <A>(...updates: Updater<A>[]) => (
-  msg: object,
-  model: A
-): Return<A> =>
-  updates.reduce(
-    // compose functions from LEFT to RIGHT
-    (updated: Return<A>, update: Updater<A>): Return<A> =>
-      // use bind (>>=) to combine the effects, but overwrite the model
-      updated.bind(
-        // wrap each returned value in update monad
-        (m: A) => Update.wrap(update(msg, m))
-      ),
-    // Wrap the inital model in update monad
-    Update(model)
-  );
-
 export const getUpdater = <M>(update: Update<M>): Updater<M> => {
   if (isFunction(update)) {
     return (msg: object, model: M) => process(update(msg, model), model);

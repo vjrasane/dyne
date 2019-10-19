@@ -1,7 +1,6 @@
 language: node_js
 node_js: 11.10.0
 script:
-  - yarn install ---ignore-optional
   - yarn test
 after_success:
   - yarn build

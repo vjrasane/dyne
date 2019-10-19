@@ -1,6 +1,6 @@
+import DyneElement from "dyne-internals";
 import { isFunction, exists } from "../../utils";
 import { msgEventListener } from "../effects/command";
-import DyneElement from "../../element";
 import { dispatch } from "../core/dispatch";
 
 const isEventProp = (name: string): boolean => /^on/.test(name);
@@ -104,8 +104,11 @@ const createElement = (node: DyneElement | string) => {
     setProps($el, node.props);
     node.children.map(createElement).forEach($el.appendChild.bind($el));
     return $el;
+  } else if (typeof node === "string") {
+    return document.createTextNode(node);
+  } else {
+    throw new Error(`Invalid DOM element: '${node}'`);
   }
-  return document.createTextNode(node);
 };
 
 export type DomElement = string | DyneElement;

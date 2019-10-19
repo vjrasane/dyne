@@ -1,5 +1,5 @@
+import DyneElement from "dyne-internals";
 import { isFunction, flatten, isString } from "~/utils";
-import DyneElement from "~/element";
 
 const dyne = () => {
   // inner scope here

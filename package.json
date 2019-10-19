@@ -14,7 +14,8 @@
   "dependencies": {
     "@babel/runtime": "^7.6.3",
     "babel-preset-react-app": "^9.0.2",
-    "deep-freeze": "^0.0.1"
+    "deep-freeze": "^0.0.1",
+    "dyne-internals": "^0.0.2"
   },
   "devDependencies": {
     "@babel/cli": "7.6.0",
