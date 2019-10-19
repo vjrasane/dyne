@@ -115,7 +115,7 @@ export type VirtualDom = DomElement | DomElement[];
 const updateElement = (
   $parent: HTMLElement,
   newNode: DomElement,
-  oldNode: VirtualDom,
+  oldNode?: VirtualDom,
   index = 0
 ) => {
   if (!exists(oldNode)) {
@@ -148,13 +148,15 @@ const updateElement = (
 export const renderer = (
   $root: HTMLElement,
   newDom: VirtualDom,
-  oldDom: VirtualDom
+  oldDom?: VirtualDom
 ): void => {
   if (Array.isArray(newDom)) {
     newDom.forEach((node: DyneElement, index: number) =>
       updateElement($root, node, oldDom ? oldDom[index] : null, index)
     );
-  } else {
+  } else if (exists($root)) {
     updateElement($root, newDom, oldDom);
+  } else {
+    throw new Error(`Invalid root node '${$root}'`);
   }
 };

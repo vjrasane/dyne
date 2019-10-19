@@ -3,7 +3,7 @@
 exports[`view returns basic virtual dom 1`] = `
 DyneElement {
   "children": Array [
-    "HELLO WORLD!",
+    "Hello World!",
   ],
   "props": Array [],
   "type": "div",
