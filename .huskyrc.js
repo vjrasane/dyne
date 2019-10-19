@@ -1,5 +1,5 @@
-module.export = {
+module.exports = {
   hooks: {
-    "pre-commit": "npm run format:pkg"
+    "pre-commit": "lint-staged"
   }
 };
