@@ -1,16 +1,23 @@
 {
   "name": "dyne",
-  "version": "0.0.4",
-  "main": "build/bundle.js",
+  "version": "0.0.5",
   "license": "Apache-2.0",
+  "main": "build/bundle.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production rollup -c",
     "build:dev": "cross-env NODE_ENV=development rollup -c",
-    "build:watch": "nodemon --exec npm run build:dev --watch src"
+    "build:watch": "nodemon --exec npm run build:dev --watch src",
+    "format:pkg": "format-package -w"
+  },
+  "dependencies": {
+    "deep-freeze": "^0.0.1"
   },
   "devDependencies": {
     "@babel/cli": "7.6.0",
     "@babel/core": "7.6.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
     "@babel/preset-env": "7.6.0",
     "babel-plugin-root-import": "6.4.1",
     "babel-plugin-transform-jsx": "2.0.0",
@@ -21,17 +28,22 @@
     "rollup-plugin-babel": "4.3.3",
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-node-resolve": "5.2.0",
-    "rollup-plugin-uglify": "6.0.3"
+    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-plugin-uglify": "6.0.3",
+    "tslib": "^1.10.0",
+    "typescript": "^3.6.4"
   },
   "optionalDependencies": {
-    "eslint": "5.5.0",
     "babel-eslint": "^10.0.3",
+    "eslint": "5.5.0",
     "eslint-config-prettier": "^6.3.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-promise": "^4.2.1",
+    "format-package": "^5.2.0",
+    "husky": "^3.0.9",
     "prettier-eslint": "^9.0.0"
   }
 }

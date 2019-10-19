@@ -8,6 +8,9 @@ module.exports = {
       {
         rootPathSuffix: ROOT_PATH_SUFFIX
       }
-    ]
+    ],
+    "@babel/transform-typescript",
+    "@babel/proposal-class-properties",
+    "@babel/transform-runtime"
   ]
 };

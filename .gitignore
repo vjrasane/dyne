@@ -1,5 +1,6 @@
 build
 node_modules
 .DS_store
+yarn.lock
+package-lock.json
 *.log
-*.lock

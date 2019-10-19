@@ -1,5 +1,6 @@
 language: node_js
 node_js: 11.10.0
+script: yarn install ---ignore-optional
 after_success:
   - yarn build
 deploy:
@@ -11,4 +12,5 @@ deploy:
     tags: true
   api_key:
     secure: p8bhOFrV7jLXX5MsU/UwpQ5JJ4daGuEH2q8hPb6Z65J2XKng7vcGm2OHVLjPNXsbPNoapnqlVajanzn/WauoW6QEb1hVJcWueqhBjnuNzIRWrpkQ9bRmZmmOi+oDY61q0c9Pp6pmmmf3ZWnEQmXAGi3ONlFqpPDGrr5eoO6/dcoiXOj61i+oPFRhoRFuhS/q0UumUHfB5x1g68o/MGeaC6bAlYfzatE4flcB8ES/CcKwiIM2rI4PdpzWILQXgml3DKL/YhjawkFiMaEh8UOsW7ruQAXC8HWNu/2xR9ngqTWWhuJEfFM3fjtUyqN1xQQ5sbbWM0yrKUzb87CTCDN0oRrCiLaaMahdHMNxvXXQVZuK/HSQtF49k6u9IxG/z7x0IF0r0ckTFJflp84z0OgueaDiAeYk6akw4NRmji5cXJ1dZzwa49ppmKkFVhTYsv2dNg9lRLALVFHmFXOb0zNIB1/6GF6trcnPY4+naSAJ9MCUIr4XB3VzAIYFBM6hMxzsyvg8Hc/YY++3ghyrAW2dkL4TWcw2CkC6JhcAr+2F6VGke2QFTnrzUeIYqK8VEnA51xg4kkbI7fGjT+JyGZlaOk6FZSroEltBEtSvnba820eUirzy9E2qcE87qlKFbLXwFgDxdNmhAbqnDSmZ9x8MoJghEfD5HVR8MZkvIhgFQA4=
+
 cache: yarn

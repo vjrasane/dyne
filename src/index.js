@@ -1,14 +1,5 @@
 import { isFunction, flatten, isString } from "~/utils";
-
-export class DyneElement {
-  constructor(type, props, children) {
-    this.type = type;
-    this.props = props || [];
-    this.children = children;
-  }
-}
-
-export const isElement = obj => obj instanceof DyneElement;
+import { DyneElement, isElement } from "~/element";
 
 const dyne = () => {
   // inner scope here
