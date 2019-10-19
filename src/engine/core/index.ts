@@ -24,9 +24,9 @@ const loop = (procedure: Sink, interval: number): void => {
   }, interval);
 };
 
-export default <M>(setupObj: Setup<M>) => {
+export default <F, M>(setupObj: Setup<F, M>) => {
   const engine = setup(setupObj);
-  return (opts: Opts): void => {
+  return (opts: Opts<F>): void => {
     const procedures = engine(opts);
     Object.entries(procedures).forEach(([name, procedure]) =>
       loop(procedure, intervals[name])

@@ -4,23 +4,23 @@ import { getUpdater, Updater, Update } from "./update";
 import { getViewer, View, Viewer } from "./view";
 import { dispatch, queues } from "./dispatch";
 
-export type Setup<M> = {
-  init: Init<M>;
+export type Setup<F, M> = {
+  init: Init<F, M>;
   update: Update<M>;
   view: View<M>;
 };
 
-export type Opts = {
+export type Opts<F> = {
   node: HTMLElement;
-  flags: object;
+  flags: F;
 };
 
-export const setup = <M>({ init, update, view }: Setup<M>) => {
+export const setup = <F, M>({ init, update, view }: Setup<F, M>) => {
   const updater: Updater<M> = getUpdater(update);
   const viewer: Viewer<M> = getViewer(view);
-  const initializer: Initializer<M> = getInitializer(init);
+  const initializer: Initializer<F, M> = getInitializer(init);
 
-  return ({ node, flags }: Opts) => {
+  return ({ node, flags }: Opts<F>) => {
     let model: M = initializer(flags);
 
     const updateProcedure = () => {
