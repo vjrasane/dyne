@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`view returns basic virtual dom 1`] = `
+DyneElement {
+  "children": Array [
+    "HELLO WORLD!",
+  ],
+  "props": Array [],
+  "type": "div",
+}
+`;

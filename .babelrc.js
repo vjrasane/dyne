@@ -1,7 +1,7 @@
 const ROOT_PATH_SUFFIX = "./src";
 
 module.exports = {
-  presets: ["@babel/env"],
+  presets: ["@babel/env", "@babel/typescript", "dyne"],
   plugins: [
     [
       "babel-plugin-root-import",
@@ -9,7 +9,6 @@ module.exports = {
         rootPathSuffix: ROOT_PATH_SUFFIX
       }
     ],
-    "@babel/transform-typescript",
     "@babel/proposal-class-properties",
     "@babel/transform-runtime"
   ]
