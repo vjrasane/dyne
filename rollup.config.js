@@ -39,5 +39,7 @@ export default [
   // main bundle
   ["index.js", "index.js"],
   // engine bundle
-  ["engine/index.js", "engine.js"]
+  ["engine/index.js", "engine.js"],
+  // compose bundle
+  ["compose.ts", "compose.js"]
 ].map(bundle);
