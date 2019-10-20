@@ -11,8 +11,4 @@ describe("view", () => {
   it("throws error with undefined view", () => {
     expect(getViewer).toThrowError();
   });
-
-  it("throws error with object view", () => {
-    expect(() => getViewer({})).toThrowError();
-  });
 });

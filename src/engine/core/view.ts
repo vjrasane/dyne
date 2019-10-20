@@ -1,20 +1,20 @@
-import DyneElement from "dyne-internals";
 import freeze from "deep-freeze";
 import { isFunction, always } from "../../utils";
 import { VirtualDom } from "../render";
+import { exists } from "../../utils";
 
-export type View<M> = (model: M) => VirtualDom;
+export type View<M> = (model: M) => VirtualDom | VirtualDom;
 
 export type Viewer<M> = View<M>;
 
 export const getViewer = <M>(view: View<M>): Viewer<M> => {
-  if (view instanceof DyneElement) {
-    return always(freeze(view));
+  if (!exists(view)) {
+    throw new Error(
+      `Expected 'view' to be a function or element, was: '${view}'`
+    );
   } else if (isFunction(view)) {
     return model => freeze(view(model));
   } else {
-    throw new Error(
-      `Expected 'view' to be a function or element, was: '${typeof view}'`
-    );
+    return always(freeze(view));
   }
 };

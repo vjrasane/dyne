@@ -1,4 +1,3 @@
-import DyneElement from "dyne-internals";
 import { isFunction, exists } from "../../utils";
 import { msgEventListener } from "../effects/command";
 import { dispatch } from "../core/dispatch";
@@ -46,8 +45,9 @@ const propChanged = (firstProp: Prop, secondProp: Prop) =>
 const nodeChanged = (firstNode: DomElement, secondNode: VirtualDom) =>
   !(
     firstNode === secondNode ||
-    (firstNode instanceof DyneElement &&
-      secondNode instanceof DyneElement &&
+    (typeof firstNode === "object" &&
+      typeof secondNode === "object" &&
+      !Array.isArray(secondNode) &&
       firstNode.type === secondNode.type)
   );
 
@@ -98,8 +98,8 @@ const updateProps = (
   });
 };
 
-const createElement = (node: DyneElement | string) => {
-  if (node instanceof DyneElement) {
+const createElement = (node: DomElement) => {
+  if (typeof node === "object") {
     const $el = document.createElement(node.type);
     setProps($el, node.props);
     node.children.map(createElement).forEach($el.appendChild.bind($el));
@@ -111,25 +111,68 @@ const createElement = (node: DyneElement | string) => {
   }
 };
 
+export type DyneElement = {
+  type?: string;
+  props: object;
+  children: DomElement[];
+};
+
 export type DomElement = string | DyneElement;
 
 export type VirtualDom = DomElement | DomElement[];
 
+const asElement = (elem: VirtualDom): DyneElement =>
+  typeof elem === "object" && !Array.isArray(elem)
+    ? elem
+    : { props: [], children: [] };
+
+const asArray = (arr: VirtualDom): DomElement[] =>
+  Array.isArray(arr) ? arr : [];
+
 const updateElement = (
   $parent: HTMLElement,
-  newNode: DomElement,
+  newNode: VirtualDom,
   oldNode?: VirtualDom,
   index = 0
 ) => {
-  if (!exists(oldNode)) {
+  /**
+   * If new node is an array, call updateElement recursively for
+   * each of its elements and the possible counterpart in the old
+   * virtual DOM.
+   */
+  if (Array.isArray(newNode)) {
+    const oldElem = asArray(oldNode);
+
+    const newLength = newNode.length;
+    const oldLength = oldElem.length;
+
+    for (let i = 0; i < Math.max(newLength, oldLength); i++) {
+      updateElement($parent, newNode[i], oldElem[i], i);
+    }
+    /**
+     * If old node does not exists, simply create a new element
+     */
+  } else if (!exists(oldNode)) {
     $parent.appendChild(createElement(newNode));
+    /**
+     * If new node does not exist, remove the element from the DOM.
+     */
   } else if (!exists(newNode)) {
     $parent.removeChild($parent.childNodes[index]);
+    /**
+     * Both exists, so check if the element has changed and replace it
+     */
   } else if (nodeChanged(newNode, oldNode)) {
     $parent.replaceChild(createElement(newNode), $parent.childNodes[index]);
-  } else if (newNode instanceof DyneElement) {
-    const oldElem =
-      oldNode instanceof DyneElement ? oldNode : DyneElement.empty;
+    /**
+     * Both exists and have not been changed, so update element props
+     * and children
+     */
+  } else if (typeof newNode === "object") {
+    const oldElem = asElement(oldNode);
+    /**
+     * Update element props
+     */
     updateProps(
       <HTMLElement>$parent.childNodes[index],
       newNode.props,
@@ -137,6 +180,9 @@ const updateElement = (
     );
     const newLength = newNode.children.length;
     const oldLength = oldElem.children.length;
+    /**
+     * Update element children
+     */
     for (let i = 0; i < Math.max(newLength, oldLength); i++) {
       updateElement(
         <HTMLElement>$parent.childNodes[index],
@@ -145,6 +191,8 @@ const updateElement = (
         i
       );
     }
+  } else {
+    throw new Error(`Invalid virtual DOM element '${newNode}'`);
   }
 };
 
@@ -153,11 +201,7 @@ export const renderer = (
   newDom: VirtualDom,
   oldDom?: VirtualDom
 ): void => {
-  if (Array.isArray(newDom)) {
-    newDom.forEach((node: DyneElement, index: number) =>
-      updateElement($root, node, oldDom ? oldDom[index] : null, index)
-    );
-  } else if (exists($root)) {
+  if (exists($root)) {
     updateElement($root, newDom, oldDom);
   } else {
     throw new Error(`Invalid root node '${$root}'`);

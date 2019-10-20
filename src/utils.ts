@@ -5,6 +5,9 @@ export const flatten = arr => arr.flat(Infinity);
 
 export const isString = obj => typeof obj === "string" || obj instanceof String;
 
+export const isObject = obj =>
+  (!!obj && typeof obj === "object") || obj.constructor !== Array;
+
 export const exists = obj => obj !== undefined && obj !== null;
 
 export const always = (obj?) => () => obj;
@@ -12,6 +15,12 @@ export const always = (obj?) => () => obj;
 export const throwError = (err: Error) => (): never => {
   throw err;
 };
+
+export const element = (type, props, children) => ({
+  type,
+  props: props || [],
+  children: children || []
+});
 
 export type Generator<A> = (...args: any[]) => A;
 

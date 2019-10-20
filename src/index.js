@@ -1,10 +1,9 @@
-import DyneElement from "dyne-internals";
-import { isFunction, flatten, isString } from "~/utils";
+import { isFunction, flatten, element, isString } from "~/utils";
 
 const dyne = () => {
   // inner scope here
   return {
-    createElement: (type, props, ...children) => {
+    createElement: (context, props, ...children) => {
       /**
        * Flatten any inner arrays created from fragments or array literals
        */
@@ -13,27 +12,27 @@ const dyne = () => {
       /**
        * Dynamic JSX components are passed as functions.
        */
-      if (isFunction(type)) {
-        return type(props, flatChildren);
+      if (isFunction(context)) {
+        return context(props, flatChildren);
+      }
+
+      /**
+       *  Raw JSX elements have a string type, props and children.
+       */
+      if (isString(context)) {
+        return element(context, props, flatChildren);
       }
 
       /**
        * Static JSX components are passed as already created elements.
        * Any props or children are ignored.
        */
-      if (type instanceof DyneElement) {
-        return type;
-      }
-
-      /**
-       *  Raw JSX elements have a string type, props and children.
-       */
-      if (isString(type)) {
-        return new DyneElement(type, props, flatChildren);
+      if (typeof context === "object") {
+        return context;
       }
 
       throw new Error(
-        `Invalid element type '${type}', expected string, function or element`
+        `Invalid element '${context}', expected string, function or element`
       );
     },
     /**

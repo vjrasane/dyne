@@ -1,5 +1,5 @@
 import { renderer } from "~/engine/render";
-import DyneElement from "~/element";
+import { element } from "../../src/utils";
 
 const html = `
 <!DOCTYPE html>
@@ -19,7 +19,7 @@ describe("render", () => {
   });
 
   it("renders basic dom", () => {
-    const virtualDom = new DyneElement("div", [], ["Hello World!"]);
+    const virtualDom = element("div", [], ["Hello World!"]);
     renderer($root, virtualDom);
     expect($root.innerHTML).toMatchSnapshot();
   });
