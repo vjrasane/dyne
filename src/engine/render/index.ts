@@ -104,8 +104,8 @@ const createElement = (node: DomElement) => {
     setProps($el, node.props);
     node.children.map(createElement).forEach($el.appendChild.bind($el));
     return $el;
-  } else if (typeof node === "string") {
-    return document.createTextNode(node);
+  } else if (typeof node === "string" || typeof node === "number") {
+    return document.createTextNode(`${node}`);
   } else {
     throw new Error(`Invalid DOM element: '${node}'`);
   }
@@ -117,7 +117,7 @@ export type DyneElement = {
   children: DomElement[];
 };
 
-export type DomElement = string | DyneElement;
+export type DomElement = string | number | DyneElement;
 
 export type VirtualDom = DomElement | DomElement[];
 

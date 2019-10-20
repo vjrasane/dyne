@@ -1,3 +1,4 @@
 module.exports = {
-  roots: ["<rootDir>/test"]
+  roots: ["<rootDir>/test"],
+  coverageDirectory: "coverage"
 };

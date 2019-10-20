@@ -23,4 +23,16 @@ describe("render", () => {
     renderer($root, virtualDom);
     expect($root.innerHTML).toMatchSnapshot();
   });
+
+  it("renders string", () => {
+    const virtualDom = "string";
+    renderer($root, virtualDom);
+    expect($root.innerHTML).toMatchSnapshot();
+  });
+
+  it("renders number", () => {
+    const virtualDom = 1000;
+    renderer($root, virtualDom);
+    expect($root.innerHTML).toMatchSnapshot();
+  });
 });

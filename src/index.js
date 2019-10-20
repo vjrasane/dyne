@@ -1,4 +1,4 @@
-import { isFunction, flatten, element, isString } from "~/utils";
+import { isFunction, flatten, element, isString, exists } from "~/utils";
 
 const dyne = () => {
   // inner scope here
@@ -27,7 +27,7 @@ const dyne = () => {
        * Static JSX components are passed as already created elements.
        * Any props or children are ignored.
        */
-      if (typeof context === "object") {
+      if (exists(context) && typeof context === "object") {
         return context;
       }
 

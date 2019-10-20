@@ -1,11 +1,131 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`view returns array with array literal 1`] = `
+Array [
+  "Hello World!",
+  Object {
+    "children": Array [
+      "Second Element",
+    ],
+    "props": Array [],
+    "type": "div",
+  },
+  Object {
+    "children": Array [
+      "Third Element",
+    ],
+    "props": Array [],
+    "type": "span",
+  },
+]
+`;
+
+exports[`view returns array with fragment 1`] = `
+Array [
+  "Hello World!",
+  Object {
+    "children": Array [
+      "Second Element",
+    ],
+    "props": Array [],
+    "type": "div",
+  },
+  Object {
+    "children": Array [
+      "Third Element",
+    ],
+    "props": Array [],
+    "type": "span",
+  },
+]
+`;
+
 exports[`view returns basic virtual dom 1`] = `
 Object {
   "children": Array [
-    "Hello World!",
+    "Basic static element",
   ],
   "props": Array [],
   "type": "div",
 }
 `;
+
+exports[`view returns basic virtual dom from function 1`] = `
+Object {
+  "children": Array [
+    "Basic dynamic element",
+  ],
+  "props": Array [],
+  "type": "div",
+}
+`;
+
+exports[`view returns component contents 1`] = `
+Object {
+  "children": Array [
+    "Component",
+  ],
+  "props": Array [],
+  "type": "div",
+}
+`;
+
+exports[`view returns component function contents 1`] = `
+Object {
+  "children": Array [
+    "Component contents",
+  ],
+  "props": Array [],
+  "type": "div",
+}
+`;
+
+exports[`view returns component function contents with children 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        "Component child",
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+  ],
+  "props": Array [],
+  "type": "div",
+}
+`;
+
+exports[`view returns component function contents with props 1`] = `
+Object {
+  "children": Array [
+    "Component contents",
+  ],
+  "props": Object {
+    "prop": "value",
+  },
+  "type": "div",
+}
+`;
+
+exports[`view returns component function contents with props and children 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        "Component child",
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+  ],
+  "props": Object {
+    "prop": "value",
+  },
+  "type": "div",
+}
+`;
+
+exports[`view returns number 1`] = `1000`;
+
+exports[`view returns string 1`] = `"string"`;

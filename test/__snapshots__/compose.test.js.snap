@@ -1,0 +1,622 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compose combination updates complex field structure and returns commands correctly 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+  ],
+  "map": [Function],
+  "model": Object {
+    "both": Object {
+      "field": "both",
+      "id": "both",
+      "msg": "message",
+      "status": "updated",
+    },
+    "cmd": null,
+    "constant": "value",
+    "embedded": Object {
+      "both": Object {
+        "field": "both",
+        "id": "both",
+        "msg": "message",
+        "status": "updated",
+      },
+      "cmd": null,
+      "constant": "embedded",
+      "model": Object {
+        "field": "model",
+        "id": "model",
+        "msg": "message",
+        "status": "updated",
+      },
+      "nothing": Object {
+        "field": "nothing",
+      },
+    },
+    "model": Object {
+      "field": "model",
+      "id": "model",
+      "msg": "message",
+      "status": "updated",
+    },
+    "nothing": Object {
+      "field": "nothing",
+    },
+  },
+}
+`;
+
+exports[`compose command keeps constant value 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "constant": "value",
+  },
+}
+`;
+
+exports[`compose command returns array of commands somewhat correctly 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+  ],
+  "map": [Function],
+  "model": Object {
+    "array": Object {
+      "0": null,
+      "1": null,
+      "2": null,
+    },
+  },
+}
+`;
+
+exports[`compose command returns complex command structure correctly 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+  ],
+  "map": [Function],
+  "model": Object {
+    "constant": "value",
+    "embeddedChild": Object {
+      "constant": "embedded",
+      "embedded": null,
+    },
+    "firstChild": null,
+    "secondChild": null,
+    "thirdChild": null,
+  },
+}
+`;
+
+exports[`compose command returns embedded command correctly 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+  ],
+  "map": [Function],
+  "model": Object {
+    "firstChild": Object {
+      "secondChild": Object {
+        "thirdChild": null,
+      },
+    },
+  },
+}
+`;
+
+exports[`compose command returns single command correctly 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+  ],
+  "map": [Function],
+  "model": Object {
+    "child": null,
+  },
+}
+`;
+
+exports[`compose command updates missing field 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+  ],
+  "map": [Function],
+  "model": Object {
+    "missing": Object {
+      "field": null,
+    },
+  },
+}
+`;
+
+exports[`compose model keeps constant value 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "constant": "value",
+  },
+}
+`;
+
+exports[`compose model updates array of fields somewhat correctly 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "array": Object {
+      "0": Object {
+        "field": 0,
+        "id": 0,
+        "msg": "message",
+        "status": "updated",
+      },
+      "1": Object {
+        "field": 1,
+        "id": 1,
+        "msg": "message",
+        "status": "updated",
+      },
+      "2": Object {
+        "field": 2,
+        "id": 2,
+        "msg": "message",
+        "status": "updated",
+      },
+    },
+  },
+}
+`;
+
+exports[`compose model updates complex structure correctly 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "constant": "value",
+    "embeddedChild": Object {
+      "constant": "embedded",
+      "embedded": Object {
+        "field": "embedded",
+        "id": "embedded",
+        "msg": "message",
+        "status": "updated",
+      },
+    },
+    "firstChild": Object {
+      "field": "first",
+      "id": "first",
+      "msg": "message",
+      "status": "updated",
+    },
+    "secondChild": Object {
+      "field": "second",
+      "id": "second",
+      "msg": "message",
+      "status": "updated",
+    },
+    "thirdChild": Object {
+      "field": "third",
+      "id": "third",
+      "msg": "message",
+      "status": "updated",
+    },
+  },
+}
+`;
+
+exports[`compose model updates embedded field correctly 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "firstChild": Object {
+      "secondChild": Object {
+        "thirdChild": Object {
+          "field": "value",
+          "id": "embedded",
+          "msg": "message",
+          "status": "updated",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`compose model updates missing field 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "missing": Object {
+      "field": Object {
+        "id": "missing",
+        "msg": "message",
+        "status": "updated",
+      },
+    },
+  },
+}
+`;
+
+exports[`compose model updates single field correctly 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "child": Object {
+      "field": "value",
+      "id": "single",
+      "msg": "message",
+      "status": "updated",
+    },
+  },
+}
+`;
+
+exports[`compose nothing keeps array of fields somewhat 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "array": Array [
+      Object {
+        "field": 0,
+      },
+      Object {
+        "field": 1,
+      },
+      Object {
+        "field": 2,
+      },
+    ],
+  },
+}
+`;
+
+exports[`compose nothing keeps complex field structure 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "constant": "value",
+    "embeddedChild": Object {
+      "constant": "embedded",
+      "embedded": Object {
+        "field": "embedded",
+      },
+    },
+    "firstChild": Object {
+      "field": "first",
+    },
+    "secondChild": Object {
+      "field": "second",
+    },
+    "thirdChild": Object {
+      "field": "third",
+    },
+  },
+}
+`;
+
+exports[`compose nothing keeps constant value 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "constant": "value",
+  },
+}
+`;
+
+exports[`compose nothing keeps embedded field 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "firstChild": Object {
+      "secondChild": Object {
+        "thirdChild": Object {
+          "field": "value",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`compose nothing keeps missing field 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {},
+}
+`;
+
+exports[`compose nothing keeps single field 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "child": Object {
+      "field": "value",
+    },
+  },
+}
+`;
+
+exports[`compose update keeps constant value 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "constant": "value",
+  },
+}
+`;
+
+exports[`compose update updates array of fields and returns commands somewhat correctly 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+  ],
+  "map": [Function],
+  "model": Object {
+    "array": Object {
+      "0": Object {
+        "field": 0,
+        "id": 0,
+        "msg": "message",
+        "status": "updated",
+      },
+      "1": Object {
+        "field": 1,
+        "id": 1,
+        "msg": "message",
+        "status": "updated",
+      },
+      "2": Object {
+        "field": 2,
+        "id": 2,
+        "msg": "message",
+        "status": "updated",
+      },
+    },
+  },
+}
+`;
+
+exports[`compose update updates complex field structure and returns commands correctly 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+  ],
+  "map": [Function],
+  "model": Object {
+    "constant": "value",
+    "embeddedChild": Object {
+      "constant": "embedded",
+      "embedded": Object {
+        "field": "embedded",
+        "id": "embedded",
+        "msg": "message",
+        "status": "updated",
+      },
+    },
+    "firstChild": Object {
+      "field": "first",
+      "id": "first",
+      "msg": "message",
+      "status": "updated",
+    },
+    "secondChild": Object {
+      "field": "second",
+      "id": "second",
+      "msg": "message",
+      "status": "updated",
+    },
+    "thirdChild": Object {
+      "field": "third",
+      "id": "third",
+      "msg": "message",
+      "status": "updated",
+    },
+  },
+}
+`;
+
+exports[`compose update updates embedded field and returns command correctly 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+  ],
+  "map": [Function],
+  "model": Object {
+    "firstChild": Object {
+      "secondChild": Object {
+        "thirdChild": Object {
+          "field": "value",
+          "id": "embedded",
+          "msg": "message",
+          "status": "updated",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`compose update updates missing field 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+  ],
+  "map": [Function],
+  "model": Object {
+    "missing": Object {
+      "field": Object {
+        "id": "missing",
+        "msg": "message",
+        "status": "updated",
+      },
+    },
+  },
+}
+`;
+
+exports[`compose update updates single field and returns command correctly 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": [Function],
+      "failure": undefined,
+      "success": undefined,
+    },
+  ],
+  "map": [Function],
+  "model": Object {
+    "child": Object {
+      "field": "value",
+      "id": "single",
+      "msg": "message",
+      "status": "updated",
+    },
+  },
+}
+`;

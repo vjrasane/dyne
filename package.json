@@ -9,7 +9,8 @@
     "build:watch": "nodemon --exec npm run build:dev --watch src",
     "format:pkg": "format-package -w",
     "prepublishOnly": "node ./scripts/prepublish.js",
-    "test": "jest"
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@babel/runtime": "^7.6.3",
