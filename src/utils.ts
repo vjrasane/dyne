@@ -1,18 +1,11 @@
 export const isFunction = obj =>
   !!(obj && obj.constructor && obj.call && obj.apply);
 
-export const flatten = (obj: any): any => {
-  if (Array.isArray(obj)) {
-    const flat: any[] = [];
-    obj.forEach((e: any) => {
-      const flatChild = flatten(e);
-      Array.isArray(flatChild) ?
-        flat.push(...flatChild) : flat.push(flatChild);
-    });
-    return flat;
-  }
-  return obj;
-};
+export const flatten = (arr: any[]): any[] =>
+  arr.reduce(
+    (flat, elem) => flat.concat(Array.isArray(elem) ? flatten(elem) : elem),
+    []
+  );
 
 export const isString = obj => typeof obj === "string" || obj instanceof String;
 
