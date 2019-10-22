@@ -12,6 +12,8 @@ export const exists = obj => obj !== undefined && obj !== null;
 
 export const always = (obj?) => () => obj;
 
+export const identity = (obj?) => obj;
+
 export const throwError = (err: Error) => (): never => {
   throw err;
 };

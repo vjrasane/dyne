@@ -1,57 +1,14 @@
 import { Update, Updated } from "./engine/core/update";
 import Return from "./engine/effects/return";
 import { isFunction, exists, always } from "./utils";
-
-type Getter<P, C> = (parent: P) => C;
-
-type Setter<P, C> = (child: C, parent: P) => P;
-
-class Lens<P, C> {
-  get: Getter<P, C>;
-  set: Setter<P, C>;
-  constructor(get: Getter<P, C>, set: Setter<P, C>) {
-    this.get = get;
-    this.set = set;
-  }
-
-  static field = <P, C>(name: string): Lens<P, C> =>
-    new Lens(getter(name), setter(name));
-
-  map = <S>(lens: Lens<C, S>): Lens<P, S> => {
-    const get: Getter<P, S> = (parent: P) => lens.get(this.get(parent));
-    const set: Setter<P, S> = (sub: S, parent: P) =>
-      this.set(lens.set(sub, this.get(parent)), parent);
-    return new Lens(get, set);
-  };
-}
-
-type OpticalUpdate<P, C> = {
-  lens: Lens<P, C>;
-  update: Update<C>;
-};
-
-const getter = <P, C>(field: string) => (parent: P): C =>
-  parent && parent[field];
-
-const setter = <P, C>(field: string) => (child: C, parent: P): P => ({
-  ...parent,
-  [field]: child
-});
-
-const Optical = <P, C>(
-  lens: Lens<P, C>,
-  update: Update<C>
-): OpticalUpdate<P, C> => ({
-  lens,
-  update
-});
+import { OpticalUpdate, Lens, Optical } from "./optical";
 
 /**
  * Combine optical updates into a single update function
  *
  * @param opticals
  */
-const combine = <M>(opticals: OpticalUpdate<M, any>[]) => (
+export const combine = <M>(opticals: OpticalUpdate<M, any>[]) => (
   msg: object,
   model: M
 ): Updated<M> =>

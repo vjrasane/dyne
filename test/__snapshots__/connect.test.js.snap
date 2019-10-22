@@ -1,0 +1,216 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`connect connects complex updates 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "firstChild": Object {
+      "data": "first child",
+      "id": "first child",
+      "msg": "message",
+      "status": "updated",
+    },
+    "fourthChild": Object {
+      "fifthChild": Object {
+        "sixthChild": Object {
+          "data": "sixth child",
+        },
+      },
+      "id": "sixth child",
+      "msg": "message",
+      "status": "updated",
+    },
+    "secondChild": Object {
+      "thirdChild": Object {
+        "data": "third child",
+        "id": "third child",
+        "msg": "message",
+        "status": "updated",
+      },
+    },
+  },
+}
+`;
+
+exports[`connect connects complex updates to missing fields 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "firstChild": Object {
+      "id": "first child",
+      "msg": "message",
+      "status": "updated",
+    },
+    "fourthChild": Object {
+      "fifthChild": Object {
+        "sixthChild": Object {
+          "id": "sixth child",
+          "msg": "message",
+          "status": "updated",
+        },
+      },
+    },
+    "secondChild": Object {
+      "thirdChild": Object {
+        "id": "third child",
+        "msg": "message",
+        "status": "updated",
+      },
+    },
+  },
+}
+`;
+
+exports[`connect connects multiple updates 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "firstChild": Object {
+      "data": "first child",
+      "id": "first child",
+      "msg": "message",
+      "status": "updated",
+    },
+    "secondChild": Object {
+      "data": "second child",
+      "id": "second child",
+      "msg": "message",
+      "status": "updated",
+    },
+    "thirdChild": Object {
+      "data": "third child",
+      "id": "third child",
+      "msg": "message",
+      "status": "updated",
+    },
+  },
+}
+`;
+
+exports[`connect connects single embedded update to missing field 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "firstChild": Object {
+      "secondChild": Object {
+        "thirdChild": Object {
+          "id": "single update",
+          "msg": "message",
+          "status": "updated",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`connect connects single embedded update with field path array 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "firstChild": Object {
+      "secondChild": Object {
+        "thirdChild": Object {
+          "data": "embedded child",
+          "id": "embedded child",
+          "msg": "message",
+          "status": "updated",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`connect connects single embedded update with lens 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "firstChild": Object {
+      "secondChild": Object {
+        "thirdChild": Object {
+          "data": "embedded child",
+          "id": "embedded child",
+          "msg": "message",
+          "status": "updated",
+        },
+      },
+    },
+  },
+}
+`;
+
+exports[`connect connects single update to missing field 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "field": Object {
+      "id": "single update",
+      "msg": "message",
+      "status": "updated",
+    },
+  },
+}
+`;
+
+exports[`connect connects single update with field name 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "field": Object {
+      "data": "single update",
+      "id": "single update",
+      "msg": "message",
+      "status": "updated",
+    },
+  },
+}
+`;
+
+exports[`connect connects single update with field path array 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "field": Object {
+      "data": "single update",
+      "id": "single update",
+      "msg": "message",
+      "status": "updated",
+    },
+  },
+}
+`;
+
+exports[`connect connects single update with lens 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": Object {
+    "field": Object {
+      "data": "single update",
+      "id": "single update",
+      "msg": "message",
+      "status": "updated",
+    },
+  },
+}
+`;
