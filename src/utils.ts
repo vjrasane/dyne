@@ -24,7 +24,7 @@ export const throwError = (err: Error) => (): never => {
 
 export const element = (type, props, children) => ({
   type,
-  props: props || [],
+  props: props || {},
   children: children || []
 });
 

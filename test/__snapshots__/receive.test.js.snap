@@ -5,27 +5,27 @@ Object {
   "children": Array [
     Object {
       "children": Array [
-        null,
+        Object {},
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
     Object {
       "children": Array [
         "receive this",
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
     Object {
       "children": Array [
         "child",
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
   ],
-  "props": Array [],
+  "props": Object {},
   "type": "div",
 }
 `;
@@ -35,25 +35,25 @@ Object {
   "children": Array [
     Object {
       "children": Array [
-        null,
+        Object {},
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
     Object {
       "children": Array [
         "receive this embedded",
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
     Object {
       "children": Array [],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
   ],
-  "props": Array [],
+  "props": Object {},
   "type": "div",
 }
 `;
@@ -67,25 +67,25 @@ Object {
           "prop": "value",
         },
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
     Object {
       "children": Array [
         "receive this",
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
     Object {
       "children": Array [
         "child",
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
   ],
-  "props": Array [],
+  "props": Object {},
   "type": "div",
 }
 `;
@@ -97,79 +97,79 @@ Object {
       "children": Array [
         Object {
           "children": Array [
-            null,
+            Object {},
           ],
-          "props": Array [],
+          "props": Object {},
           "type": "div",
         },
         Object {
           "children": Array [
             "first",
           ],
-          "props": Array [],
+          "props": Object {},
           "type": "div",
         },
         Object {
           "children": Array [],
-          "props": Array [],
+          "props": Object {},
           "type": "div",
         },
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
     Object {
       "children": Array [
         Object {
           "children": Array [
-            null,
+            Object {},
           ],
-          "props": Array [],
+          "props": Object {},
           "type": "div",
         },
         Object {
           "children": Array [
             "second",
           ],
-          "props": Array [],
+          "props": Object {},
           "type": "div",
         },
         Object {
           "children": Array [],
-          "props": Array [],
+          "props": Object {},
           "type": "div",
         },
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
     Object {
       "children": Array [
         Object {
           "children": Array [
-            null,
+            Object {},
           ],
-          "props": Array [],
+          "props": Object {},
           "type": "div",
         },
         Object {
           "children": Array [
             "third",
           ],
-          "props": Array [],
+          "props": Object {},
           "type": "div",
         },
         Object {
           "children": Array [],
-          "props": Array [],
+          "props": Object {},
           "type": "div",
         },
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
   ],
-  "props": Array [],
+  "props": Object {},
   "type": "div",
 }
 `;
@@ -183,23 +183,23 @@ Object {
           "prop": "value",
         },
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
     Object {
       "children": Array [
         "receive this",
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
     Object {
       "children": Array [],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
   ],
-  "props": Array [],
+  "props": Object {},
   "type": "div",
 }
 `;
@@ -209,25 +209,25 @@ Object {
   "children": Array [
     Object {
       "children": Array [
-        null,
+        Object {},
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
     Object {
       "children": Array [
         "receive this",
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
     Object {
       "children": Array [],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
   ],
-  "props": Array [],
+  "props": Object {},
   "type": "div",
 }
 `;

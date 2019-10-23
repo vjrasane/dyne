@@ -8,17 +8,22 @@ export default {
     const flatChildren = flatten(children);
 
     /**
+     * Ensure props are non-null
+     */
+    const propsObj = props || {};
+
+    /**
      * Dynamic JSX components are passed as functions.
      */
     if (isFunction(context)) {
-      return context(props, flatChildren);
+      return context(propsObj, flatChildren);
     }
 
     /**
      *  Raw JSX elements have a string type, props and children.
      */
     if (isString(context)) {
-      return element(context, props, flatChildren);
+      return element(context, propsObj, flatChildren);
     }
 
     /**

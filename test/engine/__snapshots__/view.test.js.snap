@@ -7,14 +7,14 @@ Array [
     "children": Array [
       "Second Element",
     ],
-    "props": Array [],
+    "props": Object {},
     "type": "div",
   },
   Object {
     "children": Array [
       "Third Element",
     ],
-    "props": Array [],
+    "props": Object {},
     "type": "span",
   },
 ]
@@ -27,14 +27,14 @@ Array [
     "children": Array [
       "Second Element",
     ],
-    "props": Array [],
+    "props": Object {},
     "type": "div",
   },
   Object {
     "children": Array [
       "Third Element",
     ],
-    "props": Array [],
+    "props": Object {},
     "type": "span",
   },
 ]
@@ -45,7 +45,7 @@ Object {
   "children": Array [
     "Basic static element",
   ],
-  "props": Array [],
+  "props": Object {},
   "type": "div",
 }
 `;
@@ -55,7 +55,7 @@ Object {
   "children": Array [
     "Basic dynamic element",
   ],
-  "props": Array [],
+  "props": Object {},
   "type": "div",
 }
 `;
@@ -65,7 +65,7 @@ Object {
   "children": Array [
     "Component",
   ],
-  "props": Array [],
+  "props": Object {},
   "type": "div",
 }
 `;
@@ -75,7 +75,7 @@ Object {
   "children": Array [
     "Component contents",
   ],
-  "props": Array [],
+  "props": Object {},
   "type": "div",
 }
 `;
@@ -87,11 +87,11 @@ Object {
       "children": Array [
         "Component child",
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
   ],
-  "props": Array [],
+  "props": Object {},
   "type": "div",
 }
 `;
@@ -115,7 +115,7 @@ Object {
       "children": Array [
         "Component child",
       ],
-      "props": Array [],
+      "props": Object {},
       "type": "div",
     },
   ],
