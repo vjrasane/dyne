@@ -1,5 +1,6 @@
 import { Update } from "./engine/core/update";
-import { identity } from "./utils";
+import { Viewer } from "./engine/core/view";
+import { identity, Generator } from "./utils";
 
 type Getter<P, C> = (parent: P) => C;
 
@@ -36,9 +37,13 @@ export class Lens<P, C> {
   };
 }
 
-export type OpticalUpdate<P, C> = {
+export type OpticalUpdate<P, C> = OpticalFunction<P, C, Update<C>>;
+
+export type OpticalView<P, C> = OpticalFunction<P, C, Viewer<C>>;
+
+export type OpticalFunction<P, C, F> = {
   lens: Lens<P, C>;
-  update: Update<C>;
+  func: F;
 };
 
 const getter = <P, C>(field: string) => (parent: P): C =>
@@ -49,10 +54,22 @@ const setter = <P, C>(field: string) => (child: C, parent: P): P => ({
   [field]: child
 });
 
-export const Optical = <P, C>(
+export const Optical = <P, C, F>(
   lens: Lens<P, C>,
-  update: Update<C>
-): OpticalUpdate<P, C> => ({
+  func: F
+): OpticalFunction<P, C, F> => ({
   lens,
-  update
+  func
 });
+
+export type Optic<P, C> = Lens<P, C> | string[] | string;
+
+export const toLens = <P, C>(optic: Optic<P, C>): Lens<P, C> => {
+  if (typeof optic === "string") {
+    return Lens.field(optic);
+  } else if (Array.isArray(optic)) {
+    return Lens.path(...optic);
+  } else {
+    return optic;
+  }
+};

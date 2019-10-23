@@ -18,7 +18,7 @@ export const combine = <M>(opticals: OpticalUpdate<M, any>[]) => (
         // get child model from parent model
         const child = optical.lens.get(m);
         // call update with child
-        const ret: Updated<C> = optical.update(msg, child);
+        const ret: Updated<C> = optical.func(msg, child);
         // if update returned nothing, use previous model
         if (!exists(ret)) {
           return Update(m);

@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`receive receives children 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        null,
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+    Object {
+      "children": Array [
+        "receive this",
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+    Object {
+      "children": Array [
+        "child",
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+  ],
+  "props": Array [],
+  "type": "div",
+}
+`;
+
+exports[`receive receives embedded model 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        null,
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+    Object {
+      "children": Array [
+        "receive this embedded",
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+    Object {
+      "children": Array [],
+      "props": Array [],
+      "type": "div",
+    },
+  ],
+  "props": Array [],
+  "type": "div",
+}
+`;
+
+exports[`receive receives model, props and children 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "prop": "value",
+        },
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+    Object {
+      "children": Array [
+        "receive this",
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+    Object {
+      "children": Array [
+        "child",
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+  ],
+  "props": Array [],
+  "type": "div",
+}
+`;
+
+exports[`receive receives multiple components 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            null,
+          ],
+          "props": Array [],
+          "type": "div",
+        },
+        Object {
+          "children": Array [
+            "first",
+          ],
+          "props": Array [],
+          "type": "div",
+        },
+        Object {
+          "children": Array [],
+          "props": Array [],
+          "type": "div",
+        },
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            null,
+          ],
+          "props": Array [],
+          "type": "div",
+        },
+        Object {
+          "children": Array [
+            "second",
+          ],
+          "props": Array [],
+          "type": "div",
+        },
+        Object {
+          "children": Array [],
+          "props": Array [],
+          "type": "div",
+        },
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+    Object {
+      "children": Array [
+        Object {
+          "children": Array [
+            null,
+          ],
+          "props": Array [],
+          "type": "div",
+        },
+        Object {
+          "children": Array [
+            "third",
+          ],
+          "props": Array [],
+          "type": "div",
+        },
+        Object {
+          "children": Array [],
+          "props": Array [],
+          "type": "div",
+        },
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+  ],
+  "props": Array [],
+  "type": "div",
+}
+`;
+
+exports[`receive receives props 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        Object {
+          "prop": "value",
+        },
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+    Object {
+      "children": Array [
+        "receive this",
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+    Object {
+      "children": Array [],
+      "props": Array [],
+      "type": "div",
+    },
+  ],
+  "props": Array [],
+  "type": "div",
+}
+`;
+
+exports[`receive receives single model 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        null,
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+    Object {
+      "children": Array [
+        "receive this",
+      ],
+      "props": Array [],
+      "type": "div",
+    },
+    Object {
+      "children": Array [],
+      "props": Array [],
+      "type": "div",
+    },
+  ],
+  "props": Array [],
+  "type": "div",
+}
+`;

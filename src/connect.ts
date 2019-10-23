@@ -1,18 +1,6 @@
-import { OpticalUpdate, Lens, Optical } from "./optical";
+import { OpticalUpdate, Lens, Optical, Optic, toLens } from "./optical";
 import { Update } from "./engine/core/update";
 import { combine } from "./compose";
-
-type Optic<P, C> = Lens<P, C> | string[] | string;
-
-const toLens = <P, C>(optic: Optic<P, C>): Lens<P, C> => {
-  if (typeof optic === "string") {
-    return Lens.field(optic);
-  } else if (Array.isArray(optic)) {
-    return Lens.path(...optic);
-  } else {
-    return optic;
-  }
-};
 
 const connector = <M>() => {
   const opticals: OpticalUpdate<M, any>[] = [];

@@ -1,4 +1,5 @@
 import { isFunction, exists } from "../../utils";
+import { DyneElement, DomElement, VirtualDom } from "../../framework/dom";
 import { msgEventListener } from "../effects/command";
 import { dispatch } from "../core/dispatch";
 
@@ -110,16 +111,6 @@ const createElement = (node: DomElement) => {
     throw new Error(`Invalid DOM element: '${node}'`);
   }
 };
-
-export type DyneElement = {
-  type?: string;
-  props: object;
-  children: DomElement[];
-};
-
-export type DomElement = string | number | DyneElement;
-
-export type VirtualDom = DomElement | DomElement[];
 
 const asElement = (elem: VirtualDom): DyneElement =>
   typeof elem === "object" && !Array.isArray(elem)
