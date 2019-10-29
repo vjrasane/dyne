@@ -6,7 +6,7 @@ export type DyneElement = {
   children: DomElement[];
 };
 
-export type DomElement = string | number | DyneElement;
+export type DomElement = string | number | boolean | DyneElement;
 
 export type VirtualDom = DomElement | DomElement[];
 

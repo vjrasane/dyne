@@ -33,7 +33,7 @@ describe("lens", () => {
     const obj = {
       field: "value"
     };
-    const lens = Lens.identity.map(Lens.field("field"));
+    const lens = Lens.identity.compose(Lens.field("field"));
     expect(lens.get(obj)).toBe("value");
     expect(lens.set("new", obj)).toEqual({ field: "new" });
   });

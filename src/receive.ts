@@ -1,8 +1,6 @@
-import { OpticalUpdate, Lens, Optical, Optic, toLens } from "./optical";
+import { Optic, toLens } from "./optical";
 import { Viewer } from "./engine/core/view";
-import { combine } from "./compose";
 import { DynamicElement, VirtualDom } from "./framework/dom";
-import Dyne from "./";
 
 type ReceiverElement = <M>(
   model: M,

@@ -50,7 +50,7 @@ const getOpticals = <M>(
     // Lens for the currently processed field
     const lens: Lens<M, any> = parentLens
       ? // If parent lens is present, map it with field lens
-        parentLens.map(Lens.field(field))
+        parentLens.compose(Lens.field(field))
       : // Otherwise use only field lens
         Lens.field(field);
     // If value is a function, assume it is an instance of update

@@ -65,8 +65,3 @@ export const processCommand = async <A>(
     process(cmd.failure, error);
   }
 };
-
-export const msgEventListener = (
-  listener: Generator<object>,
-  dispatch: Dispatch
-): Sink => (...args: any[]): void => dispatch(listener(...args));

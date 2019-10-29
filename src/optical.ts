@@ -20,7 +20,7 @@ export class Lens<P, C> {
   static path = <P>(...path: string[]): Lens<P, any> =>
     path.reduce(
       <C>(lens: Lens<P, C>, field: string): Lens<P, any> =>
-        lens.map(Lens.field(field)),
+        lens.compose(Lens.field(field)),
       Lens.identity
     );
 
@@ -29,7 +29,7 @@ export class Lens<P, C> {
     (obj: any, _): any => obj
   );
 
-  map = <S>(lens: Lens<C, S>): Lens<P, S> => {
+  compose = <S>(lens: Lens<C, S>): Lens<P, S> => {
     const get: Getter<P, S> = (parent: P) => lens.get(this.get(parent));
     const set: Setter<P, S> = (sub: S, parent: P) =>
       this.set(lens.set(sub, this.get(parent)), parent);

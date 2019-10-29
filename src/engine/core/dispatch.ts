@@ -1,4 +1,4 @@
-import { exists } from "../../utils";
+import { exists, Sink, Generator } from "../../utils";
 import Effect from "../effects/effect";
 
 export type Dispatch = (msg: object) => void;
@@ -22,3 +22,8 @@ export const dispatch = (queueable: Effect<any> | object): void => {
     ? dispatcher(queues.effect, queueable)
     : dispatcher(queues.msg, queueable);
 };
+
+export const msgEventListener = (
+  listener: Generator<object>,
+  dispatch: Dispatch
+): Sink => (...args: any[]): void => dispatch(listener(...args));

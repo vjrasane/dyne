@@ -1,8 +1,9 @@
-import { renderer, VirtualDom } from "../render";
+import { renderer } from "../render";
 import { getInitializer, Initializer, Init } from "./init";
 import { getUpdater, Updater, Update } from "./update";
 import { getViewer, View, Viewer } from "./view";
 import { dispatch, queues } from "./dispatch";
+import { VirtualDom } from "../../framework/dom";
 
 export type Setup<F, M> = {
   init: Init<F, M>;

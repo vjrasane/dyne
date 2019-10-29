@@ -1,12 +1,21 @@
 import { isFunction, flatten, element, isString, exists } from "./utils";
 
+import { VirtualDom, DyneElement } from "./framework/dom";
+
+type DynamicElement = (props: object, children: VirtualDom[]) => VirtualDom;
+
+type Context = DynamicElement | string | DyneElement;
+
 export default {
-  createElement: (context, props, ...children) => {
+  createElement: (
+    context: Context,
+    props: object,
+    ...children: VirtualDom[]
+  ): VirtualDom => {
     /**
      * Flatten any inner arrays created from fragments or array literals
      */
     const flatChildren = flatten(children);
-
     /**
      * Ensure props are non-null
      */
@@ -16,7 +25,7 @@ export default {
      * Dynamic JSX components are passed as functions.
      */
     if (isFunction(context)) {
-      return context(propsObj, flatChildren);
+      return (<DynamicElement>context)(propsObj, flatChildren);
     }
 
     /**
@@ -41,5 +50,5 @@ export default {
   /**
    * Fragments are simply array containers for their children
    */
-  Fragment: (_, children) => flatten(children)
+  Fragment: (_: any, children: VirtualDom[]): VirtualDom => flatten(children)
 };
