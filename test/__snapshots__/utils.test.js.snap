@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`utils element creates basic element 1`] = `
+Object {
+  "children": "child",
+  "props": Object {
+    "prop": "value",
+  },
+  "type": "div",
+}
+`;
+
+exports[`utils element creates minimal element 1`] = `
+Object {
+  "children": Array [],
+  "props": Object {},
+  "type": "div",
+}
+`;

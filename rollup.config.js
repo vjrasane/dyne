@@ -1,14 +1,23 @@
 import { join } from "path";
-import typescript from "rollup-plugin-typescript";
+import typescript from "rollup-plugin-typescript2";
 import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
 import resolve from "rollup-plugin-node-resolve";
 import { uglify } from "rollup-plugin-uglify";
 
+import pkg from "./package.json";
+
 const production = process.env.NODE_ENV === "production";
 
+const external = [
+  ...Object.keys(pkg.dependencies || {}),
+  ...Object.keys(pkg.peerDependencies || {})
+];
+
 const plugins = [
-  typescript(),
+  typescript({
+    typescript: require("typescript")
+  }),
   resolve(),
   commonjs({
     include: "node_modules/**",
@@ -18,28 +27,31 @@ const plugins = [
     namedExports: {},
     ignore: ["conditional-runtime-dependency"]
   }),
-  babel({ runtimeHelpers: true }),
-  production && uglify()
+  babel({ runtimeHelpers: true })
 ];
 
 const sourcePath = "src";
-const targetPath = "build";
-
-const bundle = ([input, output]) => ({
-  input: join(sourcePath, input),
-  output: {
-    file: join(targetPath, output),
-    format: "cjs",
-    exports: "named"
-  },
-  plugins
-});
+const input = join(sourcePath, "index.ts");
 
 export default [
-  // main bundle
-  ["index.js", "index.js"],
-  // engine bundle
-  ["engine/index.js", "engine.js"],
-  // compose bundle
-  ["compose.ts", "compose.js"]
-].map(bundle);
+  {
+    input,
+    output: {
+      file: pkg.main,
+      format: "cjs",
+      exports: "named"
+    },
+    plugins: [...plugins, production && uglify()],
+    external
+  },
+  {
+    input,
+    output: {
+      file: pkg.module,
+      format: "es",
+      exports: "named"
+    },
+    plugins,
+    external
+  }
+];

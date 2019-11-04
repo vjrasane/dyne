@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`setup render with minimal setup 1`] = `"<div>Hello World!</div>"`;

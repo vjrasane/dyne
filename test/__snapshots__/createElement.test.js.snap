@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createElement creates basic element 1`] = `
+Object {
+  "children": Array [
+    "Hello World!",
+  ],
+  "props": Object {},
+  "type": "div",
+}
+`;
+
+exports[`createElement creates dynamic element 1`] = `
+Object {
+  "children": Array [
+    "child",
+  ],
+  "props": Object {
+    "prop": "value",
+  },
+  "type": "div",
+}
+`;
+
+exports[`createElement creates element basic children 1`] = `
+Object {
+  "children": Array [
+    Object {
+      "children": Array [
+        "child",
+      ],
+      "props": Object {},
+      "type": "div",
+    },
+  ],
+  "props": Object {},
+  "type": "div",
+}
+`;
+
+exports[`createElement creates static element 1`] = `
+Object {
+  "children": Array [
+    "Hello World!",
+  ],
+  "props": Object {},
+  "type": "div",
+}
+`;
