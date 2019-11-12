@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`createElement creates static element 1`] = `
+Object {
+  "children": Array [
+    "Hello World!",
+  ],
+  "props": Object {},
+  "type": "div",
+}
+`;
