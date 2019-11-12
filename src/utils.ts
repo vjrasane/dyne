@@ -1,13 +1,10 @@
-import { utils } from "dyne-commons";
-import { DomElement, DyneElement } from "./types";
-
-export const { isFunction, flatten, exists } = utils;
+import { types } from "dyne-commons";
 
 export const element = (
   context: string,
-  props: object,
-  children: DomElement[]
-): DyneElement => ({
+  props?: object,
+  children?: types.DomElement[]
+): types.DyneElement => ({
   type: context,
   props: props || {},
   children: children || []

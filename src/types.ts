@@ -1,12 +1,13 @@
 import { types } from "dyne-commons";
 
-export type DomElement = types.DomElement;
-export type DyneElement = types.DyneElement;
-export type VirtualDom = types.VirtualDom;
-
 export type DynamicElement = (
   props: object,
-  children: VirtualDom[]
-) => VirtualDom;
+  children: types.VirtualDom[]
+) => types.VirtualDom;
 
-export type Context = DynamicElement | string | DyneElement;
+export type Context =
+  | DynamicElement
+  | string
+  | boolean
+  | number
+  | types.DyneElement;

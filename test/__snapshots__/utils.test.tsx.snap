@@ -2,7 +2,9 @@
 
 exports[`utils element creates basic element 1`] = `
 Object {
-  "children": "child",
+  "children": Array [
+    "child",
+  ],
   "props": Object {
     "prop": "value",
   },

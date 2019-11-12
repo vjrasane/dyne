@@ -1,4 +1,4 @@
-import { element } from "~/utils";
+import { element } from "../src/utils";
 
 describe("utils", () => {
   describe("element", () => {
@@ -8,7 +8,7 @@ describe("utils", () => {
     });
 
     it("creates basic element", () => {
-      const elem = element("div", { prop: "value" }, "child");
+      const elem = element("div", { prop: "value" }, ["child"]);
       expect(elem).toMatchSnapshot();
     });
   });

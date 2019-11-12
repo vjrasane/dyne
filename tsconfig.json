@@ -1,6 +1,14 @@
 {
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "./types",
+    "outDir": "./build",
+    "module": "commonjs",
     "target": "es5",
-    "lib": ["es2017", "dom", "esnext.array"]
-  }
+    "esModuleInterop": true,
+    "lib": ["es2017", "dom", "esnext.array"],
+    "jsx": "react",
+    "jsxFactory": "Dyne.createElement"
+  },
+  "files": ["src/index.ts"]
 }
