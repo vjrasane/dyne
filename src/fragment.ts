@@ -1,7 +1,5 @@
-import { VirtualDom } from "dyne-commons";
-import { utils } from "dyne-commons/build/index";
-
-const { flatten } = utils;
+import { VirtualDom } from "./types";
+import { flatten } from "./utils";
 
 /**
  * Fragments are simply array containers for their children

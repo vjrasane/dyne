@@ -1,4 +1,8 @@
-import { VirtualDom, DyneElement } from "dyne-commons";
+import { types } from "dyne-commons";
+
+export type DomElement = types.DomElement;
+export type DyneElement = types.DyneElement;
+export type VirtualDom = types.VirtualDom;
 
 export type DynamicElement = (
   props: object,

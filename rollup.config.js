@@ -1,4 +1,4 @@
-import { join } from "path";
+import { join, dirname } from "path";
 import typescript from "rollup-plugin-typescript2";
 import babel from "rollup-plugin-babel";
 import commonjs from "rollup-plugin-commonjs";
@@ -31,7 +31,20 @@ const plugins = [
 ];
 
 const sourcePath = "src";
+const buildPath = dirname(pkg.main);
 const input = join(sourcePath, "index.ts");
+
+const ugly = uglify({
+  mangle: {
+    toplevel: true
+  },
+  compress: {
+    hoist_funs: true,
+    hoist_props: true,
+    hoist_vars: true,
+    toplevel: true
+  }
+});
 
 export default [
   {
@@ -41,7 +54,7 @@ export default [
       format: "cjs",
       exports: "named"
     },
-    plugins: [...plugins, production && uglify()],
+    plugins,
     external
   },
   {
@@ -52,6 +65,16 @@ export default [
       exports: "named"
     },
     plugins,
+    external
+  },
+  {
+    input,
+    output: {
+      file: join(buildPath, "index.min.js"),
+      format: "cjs",
+      exports: "named"
+    },
+    plugins: [...plugins, production && ugly],
     external
   }
 ];

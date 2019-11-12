@@ -1,9 +1,5 @@
-import { VirtualDom, DomElement } from "dyne-commons";
-import { utils } from "dyne-commons/build/index";
-import { Context, DynamicElement } from "./types";
-import { element } from "./utils";
-
-const { isFunction, flatten, exists } = utils;
+import { Context, DynamicElement, VirtualDom, DomElement } from "./types";
+import { element, flatten, isFunction, exists } from "./utils";
 
 export default (
   context: Context,

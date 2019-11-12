@@ -1,4 +1,7 @@
-import { DyneElement, DomElement } from "dyne-commons";
+import { utils } from "dyne-commons";
+import { DomElement, DyneElement } from "./types";
+
+export const { isFunction, flatten, exists } = utils;
 
 export const element = (
   context: string,
