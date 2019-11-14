@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fragment creates basic fragment 1`] = `
+Array [
+  "Hello World!",
+  Object {
+    "children": Array [
+      "child",
+    ],
+    "props": Object {},
+    "type": "div",
+  },
+]
+`;
+
+exports[`fragment creates dynamic fragment 1`] = `
+Array [
+  Object {
+    "children": Array [],
+    "props": Object {
+      "prop": "value",
+    },
+    "type": "div",
+  },
+  Object {
+    "children": Array [
+      "child",
+    ],
+    "props": Object {},
+    "type": "div",
+  },
+]
+`;
+
+exports[`fragment creates empty fragment 1`] = `Array []`;

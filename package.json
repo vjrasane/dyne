@@ -3,9 +3,9 @@
   "version": "0.0.14",
   "license": "Apache-2.0",
   "main": "build/index.js",
-  "module": "build/index.es.js",
   "scripts": {
     "build": "tsc",
+    "build:watch": "nodemon --exec npm run build --watch src",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "format:pkg": "format-package -w",
     "test": "jest",

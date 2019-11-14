@@ -10,10 +10,11 @@ module.exports = {
   },
   globals: {
     "ts-jest": {
-      // tsConfig: "tsconfig.test.json"
       tsConfig: {
         allowJs: true,
-        esModuleInterop: true
+        esModuleInterop: true,
+        jsx: "react",
+        jsxFactory: "Dyne.createElement"
       }
     }
   }
