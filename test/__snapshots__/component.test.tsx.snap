@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component creates basic component 1`] = `
+Component {
+  "children": Array [],
+  "props": Object {},
+  "view": [Function],
+}
+`;
+
+exports[`component creates component with children 1`] = `
+Component {
+  "children": Array [
+    Object {
+      "children": Array [
+        "FIRST",
+      ],
+      "props": Object {},
+      "type": "div",
+    },
+    Object {
+      "children": Array [
+        "SECOND",
+      ],
+      "props": Object {},
+      "type": "div",
+    },
+    Object {
+      "children": Array [
+        "THIRD",
+      ],
+      "props": Object {},
+      "type": "div",
+    },
+  ],
+  "props": Object {},
+  "view": [Function],
+}
+`;
+
+exports[`component creates component with props 1`] = `
+Component {
+  "children": Array [],
+  "props": Object {
+    "className": "class",
+    "data-bool": true,
+    "data-prop": "value",
+  },
+  "view": [Function],
+}
+`;

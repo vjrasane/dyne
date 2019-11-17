@@ -1,16 +1,17 @@
-import { utils, types } from "dyne-commons";
+import { utils as U, types as T } from "dyne-commons";
 import { Context, DynamicElement } from "./types";
+import Component from "./component";
 import { element } from "./utils";
 
 export default (
   context: Context,
   props?: object,
-  ...children: types.VirtualDom[]
-): types.VirtualDom => {
+  ...children: T.VirtualDom[]
+): T.VirtualDom => {
   /**
    * Flatten any inner arrays created from fragments or array literals
    */
-  const flatChildren: types.DomElement[] = utils.flatten(children);
+  const flatChildren: T.DomElement[] = U.flatten(children);
   /**
    * Ensure props are non-null
    */
@@ -19,7 +20,15 @@ export default (
   /**
    * Dynamic JSX components are passed as functions.
    */
-  if (utils.isFunction(context)) {
+  if (U.isFunction(context)) {
+    /**
+     * If context function extends Component, call its constructor
+     */
+    if ((<Function>context).prototype instanceof Component)
+      return new (<any>context)(propsObj, flatChildren);
+    /**
+     * Otherwise call the standard function
+     */
     return (<DynamicElement>context)(propsObj, flatChildren);
   }
 
@@ -34,7 +43,7 @@ export default (
    * Static JSX components are passed as already created elements.
    * Any props or children are ignored.
    */
-  if (utils.exists(context) && typeof context === "object") {
+  if (U.exists(context) && typeof context === "object") {
     return context;
   }
 
