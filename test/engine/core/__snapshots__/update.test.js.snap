@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`update handles basic update 1`] = `
+Object {
+  "model": "model",
+  "msg": "msg",
+}
+`;
+
+exports[`update handles update with effects 1`] = `
+Object {
+  "model": "model",
+  "msg": "msg",
+}
+`;
+
+exports[`update wraps a command 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": "effect",
+      "execute": [Function],
+      "failure": [Function],
+      "success": [Function],
+    },
+  ],
+  "map": [Function],
+  "model": null,
+}
+`;
+
+exports[`update wraps a model 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": "model",
+}
+`;
+
+exports[`update wraps a subscription 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Subscription {
+      "cancel": [Function],
+      "canceller": [Function],
+      "effect": [Function],
+      "execute": [Function],
+    },
+  ],
+  "map": [Function],
+  "model": null,
+}
+`;

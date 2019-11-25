@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`subscription listens to window events 1`] = `
+Array [
+  Array [
+    Object {
+      "event": Event {
+        "isTrusted": false,
+      },
+      "msg": "click",
+    },
+  ],
+]
+`;

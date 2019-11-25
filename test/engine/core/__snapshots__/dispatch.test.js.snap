@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`dispatch does not queue null 1`] = `
+Object {
+  "effect": Array [],
+  "msg": Array [],
+}
+`;
+
+exports[`dispatch does not queue undefined 1`] = `
+Object {
+  "effect": Array [],
+  "msg": Array [],
+}
+`;
+
+exports[`dispatch queues booleans 1`] = `
+Object {
+  "effect": Array [],
+  "msg": Array [
+    false,
+    true,
+  ],
+}
+`;
+
+exports[`dispatch queues command 1`] = `
+Object {
+  "effect": Array [
+    Command {
+      "effect": "command",
+      "execute": [Function],
+      "failure": [Function],
+      "success": [Function],
+    },
+  ],
+  "msg": Array [],
+}
+`;
+
+exports[`dispatch queues function 1`] = `
+Object {
+  "effect": Array [],
+  "msg": Array [
+    [Function],
+  ],
+}
+`;
+
+exports[`dispatch queues integers 1`] = `
+Object {
+  "effect": Array [],
+  "msg": Array [
+    0,
+    1000,
+  ],
+}
+`;
+
+exports[`dispatch queues message 1`] = `
+Object {
+  "effect": Array [],
+  "msg": Array [
+    "message",
+  ],
+}
+`;
+
+exports[`dispatch queues objects 1`] = `
+Object {
+  "effect": Array [],
+  "msg": Array [
+    Object {},
+    Object {
+      "action": "action",
+    },
+  ],
+}
+`;
+
+exports[`dispatch queues subscription 1`] = `
+Object {
+  "effect": Array [
+    Subscription {
+      "cancel": [Function],
+      "canceller": [Function],
+      "effect": [Function],
+      "execute": [Function],
+    },
+  ],
+  "msg": Array [],
+}
+`;

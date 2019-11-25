@@ -1,4 +1,4 @@
-import Dyne from "../src";
+import Dyne from "../../src";
 
 describe("fragment", () => {
   it("creates empty fragment", () => {

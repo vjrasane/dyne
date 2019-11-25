@@ -1,4 +1,4 @@
-import Dyne from "../src";
+import Dyne from "../../src";
 
 describe("createElement", () => {
   it("creates basic element", () => {

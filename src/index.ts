@@ -1,9 +1,3 @@
-import createElement from "./createElement";
-import Fragment from "./fragment";
-import Component from "./component";
-
-export default {
-  createElement,
-  Fragment,
-  Component
-};
+export { engine, Update, Init, Cmd, Sub } from "./engine";
+import dom from "./dom";
+export default dom;

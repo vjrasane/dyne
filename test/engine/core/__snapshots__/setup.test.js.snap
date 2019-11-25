@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`setup creates new dom when model has changed 1`] = `
+Array [
+  Array [
+    undefined,
+  ],
+  Array [
+    Object {
+      "model": undefined,
+      "msg": "message",
+    },
+  ],
+]
+`;
+
+exports[`setup does not render when dom has not changed 1`] = `"<div id=\\"clickable\\">Hello World!</div>"`;
+
+exports[`setup render with minimal setup 1`] = `"<div id=\\"clickable\\">Hello World!</div>"`;
+
+exports[`setup updates after click event 1`] = `
+Array [
+  Array [
+    Object {
+      "action": "event",
+      "event": Event {
+        "isTrusted": false,
+      },
+    },
+    undefined,
+  ],
+]
+`;

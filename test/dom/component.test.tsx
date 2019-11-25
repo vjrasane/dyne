@@ -1,4 +1,4 @@
-import Dyne from "../src";
+import Dyne from "../../src";
 
 class Component extends Dyne.Component {
   constructor(props, children) {

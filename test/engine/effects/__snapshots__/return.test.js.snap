@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`return binds return model and effects 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": "command",
+      "execute": [Function],
+      "failure": [Function],
+      "success": [Function],
+    },
+    Command {
+      "effect": "effect",
+      "execute": [Function],
+      "failure": [Function],
+      "success": [Function],
+    },
+  ],
+  "map": [Function],
+  "model": "MODEL",
+}
+`;
+
+exports[`return creates basic return 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [],
+  "map": [Function],
+  "model": "model",
+}
+`;
+
+exports[`return creates return with effects 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": "command",
+      "execute": [Function],
+      "failure": [Function],
+      "success": [Function],
+    },
+    Command {
+      "effect": "effect",
+      "execute": [Function],
+      "failure": [Function],
+      "success": [Function],
+    },
+  ],
+  "map": [Function],
+  "model": "model",
+}
+`;
+
+exports[`return maps return model 1`] = `
+Return {
+  "bind": [Function],
+  "effects": Array [
+    Command {
+      "effect": "command",
+      "execute": [Function],
+      "failure": [Function],
+      "success": [Function],
+    },
+  ],
+  "map": [Function],
+  "model": "MODEL",
+}
+`;

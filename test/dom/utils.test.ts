@@ -1,4 +1,4 @@
-import { element } from "../src/utils";
+import { element } from "../../src/dom/utils";
 
 describe("utils", () => {
   describe("element", () => {
